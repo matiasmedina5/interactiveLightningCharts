@@ -1,0 +1,9 @@
+<aura:component controller="SubmittedAppsByAccountController" implements="flexipage:availableForAllPageTypes" access="global">
+	<aura:attribute name="charType" type="String" default="bar"/>
+    <aura:attribute name="appsByAccount" type="Map" default=""/>
+    <ltng:require scripts="{!$Resource.ChartJS23}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:registerEvent name="chartEvent" type="c:ChartEvent"/>
+    <div class="slds-box">
+    	<canvas aura:id="graph" height="350"></canvas>
+    </div>
+</aura:component>

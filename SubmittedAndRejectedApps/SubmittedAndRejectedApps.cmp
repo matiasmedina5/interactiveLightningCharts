@@ -1,0 +1,14 @@
+<aura:component controller="SubmittedAndRejectedAppsController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" >
+	
+    <ltng:require scripts="{!$Resource.ChartJS23}" afterScriptsLoaded="{!c.scriptsLoaded}" />
+	<aura:attribute name="title" type="String" default=""/>
+	<aura:attribute name="appsByAccount" type="Map" default=""/>
+    <aura:attribute name="account" type="Map" default=""/>
+    <aura:handler event="c:ChartEvent" action="{!c.chartChange}"/>
+    
+    <div>
+		<div class="slds-text-heading--medium">{!v.title}</div>
+	    <canvas aura:id="chart" height="350"></canvas>
+    </div>
+    
+</aura:component>
